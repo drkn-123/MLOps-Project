@@ -2,14 +2,14 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "your-dockerhub-username/ml-app"
+        DOCKER_IMAGE = "drkn1/ml-app"
         DOCKER_TAG = "latest"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'dev', url: 'https://github.com/your-username/your-repo.git'
+                git branch: 'dev', url: 'https://github.com/drkn-123/MLOps-Project.git'
             }
         }
 

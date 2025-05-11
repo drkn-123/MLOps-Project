@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: ml-model-container
-          image: <your-dockerhub-username>/mlops-model:latest
+          image: drkn1/mlops-model:latest
           ports:
             - containerPort: 5000
