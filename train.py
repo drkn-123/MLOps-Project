@@ -1,19 +1,17 @@
 import os
-import zipfile
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers, models
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # Paths
-DATASET_PATH = "data/dogs-vs-cats"
-EXTRACTED_PATH = os.path.join(DATASET_PATH, "train")
+DATASET_PATH = "data/PetImages"
 
 # Load images using Keras utility
 datagen = ImageDataGenerator(validation_split=0.2, rescale=1./255)
 
 train_data = datagen.flow_from_directory(
-    EXTRACTED_PATH,
+    DATASET_PATH,
     target_size=(150, 150),
     batch_size=32,
     class_mode='binary',
@@ -21,14 +19,14 @@ train_data = datagen.flow_from_directory(
 )
 
 val_data = datagen.flow_from_directory(
-    EXTRACTED_PATH,
+    DATASET_PATH,
     target_size=(150, 150),
     batch_size=32,
     class_mode='binary',
     subset='validation'
 )
 
-# Simple CNN
+# Simple CNN model
 model = models.Sequential([
     layers.Conv2D(32, (3, 3), activation='relu', input_shape=(150, 150, 3)),
     layers.MaxPooling2D(2, 2),
