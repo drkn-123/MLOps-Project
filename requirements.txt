@@ -1,2 +1,9 @@
-tensorflow==2.14.0
-kaggle
+tensorflow==2.13.0
+numpy==1.23.5
+tensorflow==2.13.0
+numpy==1.23.5
+Pillow==9.5.0
+matplotlib==3.7.1
+scipy==1.10.1
+# pandas==1.5.3
+# scikit-learn==1.2.2
