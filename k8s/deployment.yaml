@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: ml-model-container
-          image: drkn1/mlops-model:latest
+          image: drkn1/ml-app:latest
           ports:
             - containerPort: 5000
